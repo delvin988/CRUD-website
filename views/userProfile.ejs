@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Memes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        form {
+            margin: 20px 0;
+        }
+
+        input, button {
+            padding: 8px;
+            margin-right: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4caf50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <form action="/logout" method="post">
+        <button type="submit">Log out</button>
+    </form>
+
+    <h3><a href="/course">Course</a></h3>
+    <table border="1">
+        <tr>
+            <th>About me</th>
+            <th>imageUrl</th>
+            <th>dateOfBirth</th>
+        </tr>
+        <% userProfile.forEach((el) => { %>
+            <tr>
+                <td><%= el.aboutMe %></td>
+                <td><%= el.imageUrl %></td>
+                <td><%= el.dateOfBirth %></td>
+            </tr>
+        <% }) %>
+    </table>
+</body>
+</html>
